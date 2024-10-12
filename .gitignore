@@ -1,0 +1,25 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+
+# Env files
+.env
+
+# Archivos generados por el sistema
+.DS_Store
+Thumbs.db
+
+# Editor/IDE (Visual Studio Code, JetBrains, etc.)
+.vscode/
+.idea/
+
+# Archivos de configuración
+request.http
+
+# Archivos temporales o de backups
+*.bak
+*.temp
+*.tmp
