@@ -23,5 +23,12 @@ router.get('/products/Getfavorites', authMiddleware, async (req, res) => {
     
 });
 
+// Ruta para eliminar un producto de favoritos (requiere autenticación)
+
+router.delete('/products/favorites/:productId', authMiddleware, async (req, res) => {
+    await controllers.removeProductFromFavoritesController(req, res);
+});
+
+
 
 export default router;

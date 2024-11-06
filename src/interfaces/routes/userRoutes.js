@@ -67,7 +67,7 @@ router.get('/users', authMiddleware, isAdminMiddleware, async (req, res) => {
 });
 
 // Obtener un usuario por ID (requiere autenticación y ser admin)
-router.get('/users/:id', authMiddleware, isAdminMiddleware, async (req, res) => {
+router.get('/users/:id', authMiddleware, async (req, res) => {
     try {
         await controllers.getUserByIdController(req, res);
     } catch (error) {

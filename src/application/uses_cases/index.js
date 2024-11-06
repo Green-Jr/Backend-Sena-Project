@@ -9,6 +9,7 @@ import buildResetPasswordUsingToken from './Users/resetPasswordUsingToken';
 import buildSearchUsers from './Users/searchUsers';
 import buildGetFavoriteProducts from './Products/getFavoriteProducts';
 import buildAddProductToFavorites from './Products/addProductToFavorites';
+import buildDeleteProductFromUser from './Products/deleteFavoriteProduct';
 import UserRepository from '../../infrastructure/repositories/userRepository';
 import ProductRepository from '../../infrastructure/repositories/productRepository'; 
 import sequelize from '../../infrastructure/Config/database';
@@ -27,6 +28,7 @@ const resetPasswordUsingToken = buildResetPasswordUsingToken({ userRepository: u
 const searchUsers = buildSearchUsers({ userRepository: userRepositoryInstance });
 const getFavoriteProducts = buildGetFavoriteProducts({ userRepository: userRepositoryInstance, sequelize });
 const addProductToFavorites = buildAddProductToFavorites({ userRepository: userRepositoryInstance,productRepository: productRepositoryInstance});
+const removeProductFromFavorites = buildDeleteProductFromUser ({ userRepository: userRepositoryInstance, productRepository: productRepositoryInstance})
 
 const useCases = Object.freeze({
     createUser,
@@ -39,7 +41,8 @@ const useCases = Object.freeze({
     resetPasswordUsingToken,
     searchUsers,
     getFavoriteProducts,
-    addProductToFavorites
+    addProductToFavorites,
+    removeProductFromFavorites
 });
 
 export default useCases;
@@ -54,5 +57,6 @@ export {
     resetPasswordUsingToken,
     searchUsers,
     getFavoriteProducts,
-    addProductToFavorites
+    addProductToFavorites,
+    removeProductFromFavorites
 };

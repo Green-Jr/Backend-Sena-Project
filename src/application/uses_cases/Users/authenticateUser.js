@@ -13,8 +13,16 @@ export default function buildAuthenticateUser({ userRepository }) {
             throw new Error('Invalid email or password');
         }
 
-        const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET, { expiresIn: '1h' });
-
+        const token = jwt.sign(
+            { 
+                userId: user.id, 
+                email: user.email, 
+                name: user.name 
+            }, 
+            process.env.JWT_SECRET, 
+            { expiresIn: '1h' }
+        );
+        
         return {
             statusCode: 200,
             body: { user, token }
