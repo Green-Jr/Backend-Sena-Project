@@ -9,6 +9,7 @@ import buildResetPasswordUsingTokenController from './UserControllers/resetPassw
 import buildSearchUsersController from './UserControllers/searchUsersController';
 import buildGetFavoriteProductsController from './ProductsControllers/searchFavoritesProductsController';
 import buildAddProductToFavoritesController from './ProductsControllers/addProductToFavoritesController';
+import buildRemoveProductFromFavoritesController from './ProductsControllers/deleteFavoriteProductController';
 
 import useCases from '../../application/uses_cases';
 
@@ -24,6 +25,7 @@ const resetPasswordUsingTokenController = buildResetPasswordUsingTokenController
 const searchUsersController = buildSearchUsersController({ searchUsers: useCases.searchUsers });
 const searchFavoritesProductsController = buildGetFavoriteProductsController({ getFavoriteProducts: useCases.getFavoriteProducts });
 const addProductToFavoritesController = buildAddProductToFavoritesController({ addProductToFavorites: useCases.addProductToFavorites });
+const removeProductFromFavoritesController = buildRemoveProductFromFavoritesController({removeProductFromFavorites: useCases.removeProductFromFavorites})
 
 const controllers = Object.freeze({
     createUserController,
@@ -36,7 +38,8 @@ const controllers = Object.freeze({
     resetPasswordUsingTokenController,
     searchUsersController,
     searchFavoritesProductsController,
-    addProductToFavoritesController
+    addProductToFavoritesController,
+    removeProductFromFavoritesController
 });
 
 export default controllers;
@@ -51,5 +54,6 @@ export {
     resetPasswordUsingTokenController,
     searchUsersController,
     searchFavoritesProductsController,
-    addProductToFavoritesController
+    addProductToFavoritesController,
+    removeProductFromFavoritesController
 };
