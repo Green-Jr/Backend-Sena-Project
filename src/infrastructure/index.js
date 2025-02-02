@@ -26,11 +26,21 @@ app.use((req, res, next) => {
     next();
 });
 
+console.log("Allowed Frontend Origin: ", process.env.FRONTEND);
+
 app.use(cors({
-  origin: process.env.FRONTEND, // Cambia esto por el dominio del frontend
-  methods: 'GET,POST,PUT,DELETE',
-  credentials: true,
+    origin: (origin, callback) => {
+        if (!origin || origin === process.env.FRONTEND) {
+          callback(null, true);
+        } else {
+          callback(new Error("Not allowed by CORS"));
+        }
+      },
+    methods: 'GET,POST,PUT,DELETE',
+    credentials: false,
 }));
+
+app.options("*", cors());
 
 // Probar la conexión usando la instancia de Sequelize ya configurada
 sequelize.authenticate()
