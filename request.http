@@ -1,8 +1,8 @@
 @baseUrl = http://localhost:2700
 @userId = 6729a385-25af-4d94-b3bf-ff4544393e5b
-@Token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJlMjZmNmVhMi1hOWNkLTQ4ZWMtOGU2OS1mZGQyMTFmMWNiMTIiLCJpYXQiOjE3Mjk3NDMyMzIsImV4cCI6MTcyOTc0NjgzMn0.TjLxoKrhzJp8DJiHUP6UN5_L3kBUbHYvVSV8MOzznNE
+@Token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmYzRkNWYyNC05Nzg3LTRmYzMtYTkyYS1jZTJlNmFjOTNjOGYiLCJlbWFpbCI6ImFkbWluQGV4YW1wbGUuY29tIiwibmFtZSI6IkFkbWluIiwiaWF0IjoxNzM3MjMzNTUwLCJleHAiOjE3MzcyMzcxNTB9.LNG7RWpnf2zsV0iiSQ8LLunkZwX3aft-XW7LdKAP-to
 @ResetToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyNjE2NjQxZi02NDU5LTRhYTAtYTZlYS0yY2IwYWIxYmI5MjQiLCJpYXQiOjE3Mjg3MDYzMzcsImV4cCI6MTcyODcwNzIzN30.OhL74P5ux9SAyUfO6oxfZq-oOygltOEUIU61z6EKiwY
-@productId=dae0c646-ca29-49f0-8ea3-9e1279527a74
+@productId=ebf9dadc-dbb4-4294-b7ef-0f13507d2d68
 ### Crear un nuevo usuario Admin
 POST {{baseUrl}}/api/users
 Content-Type: application/json
@@ -30,7 +30,7 @@ Content-Type: application/json
 
 {
     "email": "admin@example.com",
-    "password": "Semeolvido"
+    "password": "Arbey2321"
 }
 
 ### Autenticar un usuario

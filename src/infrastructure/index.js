@@ -27,7 +27,7 @@ app.use((req, res, next) => {
 });
 
 app.use(cors({
-  origin: 'http://localhost:5173', // Cambia esto por el dominio del frontend
+  origin: process.env.FRONTEND, // Cambia esto por el dominio del frontend
   methods: 'GET,POST,PUT,DELETE',
   credentials: true,
 }));
