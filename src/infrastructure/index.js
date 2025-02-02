@@ -29,15 +29,9 @@ app.use((req, res, next) => {
 console.log("Allowed Frontend Origin: ", process.env.FRONTEND);
 
 app.use(cors({
-    origin: (origin, callback) => {
-        if (!origin || origin === process.env.FRONTEND) {
-          callback(null, true);
-        } else {
-          callback(new Error("Not allowed by CORS"));
-        }
-      },
+    origin: "*",
     methods: 'GET,POST,PUT,DELETE',
-    credentials: false,
+    credentials: true,
 }));
 
 app.options("*", cors());
