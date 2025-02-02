@@ -20,9 +20,9 @@ POST {{baseUrl}}/api/users
 Content-Type: application/json
 
 {
-    "name": "SantiagoMuriel",
-    "email": "SantiagoMuriel@gmail.com",
-    "password": "SantiagoMuriel29"
+    "name": "Arbey Orozco",
+    "email": "carlitos23@thisisvank.com",
+    "password": "123456"
 }
 
 ### Autenticar un usuario Administrator
