@@ -10,7 +10,7 @@ import cors from 'cors';
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 2700;
+//const PORT = process.env.PORT || 2700;
 
 // Middleware
 app.use(bodyParser.json());
@@ -42,6 +42,9 @@ app.use('/api', userRoutes);      // Todas las rutas de usuarios bajo el prefijo
 app.use('/api', productRoutes);   // Todas las rutas de productos bajo el prefijo /api
 
 // Start server
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+// app.listen(PORT, () => {
+//     console.log(`Server running on port ${PORT}`);
+// });
+
+export default app;
+
