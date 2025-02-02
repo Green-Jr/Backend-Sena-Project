@@ -7,7 +7,7 @@ const Product = sequelize.define('Product', {
     defaultValue: DataTypes.UUIDV4,
     allowNull: false,
     primaryKey: true,
-    field: 'ID' 
+    field: 'ID'
   },
   name: {
     type: DataTypes.STRING,
@@ -27,32 +27,35 @@ const Product = sequelize.define('Product', {
   image_url: {
     type: DataTypes.TEXT,
     allowNull: false,
-    field: 'IMAGE_URL' 
+    field: 'IMAGE_URL'
   },
   iduser: {
     type: DataTypes.UUID,
     allowNull: false,
     references: {
-      model: 'User',
-      key: 'id'
+      model: {
+        schema: 'EASY_MARKET', // Especifica el esquema
+        tableName: 'USERS'    // Cambia 'User' por 'USERS'
+      },
+      key: 'ID'               // Cambia 'id' por 'ID' para que coincida con la base de datos
     },
     field: 'IDUSER'
   },
   createdAt: {
     type: DataTypes.DATE,
     allowNull: false,
-    defaultValue: DataTypes.NOW,  
-    field: 'CREATEDAT' 
+    defaultValue: DataTypes.NOW,
+    field: 'CREATEDAT'
   },
   updatedAt: {
     type: DataTypes.DATE,
     allowNull: false,
-    defaultValue: DataTypes.NOW,  
-    field: 'UPDATEDAT' 
+    defaultValue: DataTypes.NOW,
+    field: 'UPDATEDAT'
   }
 }, {
   schema: 'EASY_MARKET',
-  tableName: 'PRODUCTS', 
+  tableName: 'PRODUCTS',
   timestamps: false
 });
 

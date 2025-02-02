@@ -5,6 +5,7 @@ import morgan from 'morgan';
 import userRoutes from '../interfaces/routes/userRoutes';
 import productRoutes from '../interfaces/routes/productRoutes';
 import sequelize from '../infrastructure/Config/database';
+import cors from 'cors';
 
 dotenv.config();
 
@@ -24,6 +25,12 @@ app.use((req, res, next) => {
     console.log('Request Body:', req.body);
     next();
 });
+
+app.use(cors({
+  origin: process.env.FRONTEND, // Cambia esto por el dominio del frontend
+  methods: 'GET,POST,PUT,DELETE',
+  credentials: true,
+}));
 
 // Probar la conexión usando la instancia de Sequelize ya configurada
 sequelize.authenticate()

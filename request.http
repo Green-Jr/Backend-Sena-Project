@@ -1,0 +1,116 @@
+@baseUrl = http://localhost:2700
+@userId = 6729a385-25af-4d94-b3bf-ff4544393e5b
+@Token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmYzRkNWYyNC05Nzg3LTRmYzMtYTkyYS1jZTJlNmFjOTNjOGYiLCJlbWFpbCI6ImFkbWluQGV4YW1wbGUuY29tIiwibmFtZSI6IkFkbWluIiwiaWF0IjoxNzM3MjMzNTUwLCJleHAiOjE3MzcyMzcxNTB9.LNG7RWpnf2zsV0iiSQ8LLunkZwX3aft-XW7LdKAP-to
+@ResetToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyNjE2NjQxZi02NDU5LTRhYTAtYTZlYS0yY2IwYWIxYmI5MjQiLCJpYXQiOjE3Mjg3MDYzMzcsImV4cCI6MTcyODcwNzIzN30.OhL74P5ux9SAyUfO6oxfZq-oOygltOEUIU61z6EKiwY
+@productId=ebf9dadc-dbb4-4294-b7ef-0f13507d2d68
+### Crear un nuevo usuario Admin
+POST {{baseUrl}}/api/users
+Content-Type: application/json
+
+{
+    "name": "Admin",
+    "email": "admin@example.com",
+    "password": "Arbey2321",
+    "role": "admin"
+}
+
+### Crear un nuevo usuario
+POST {{baseUrl}}/api/users
+Content-Type: application/json
+
+{
+    "name": "SantiagoMuriel",
+    "email": "SantiagoMuriel@gmail.com",
+    "password": "SantiagoMuriel29"
+}
+
+### Autenticar un usuario Administrator
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "admin@example.com",
+    "password": "Arbey2321"
+}
+
+### Autenticar un usuario
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "SantiagoMurielOrozco@gmail.com",
+    "password": "SantiagoMuriel29"
+}
+
+### Obtener todos los usuarios (solo admin)
+GET {{baseUrl}}/api/users
+Authorization: Bearer {{Token}}
+
+### Obtener un usuario por ID
+GET {{baseUrl}}/api/users/{{userId}}
+Authorization: Bearer {{Token}}
+
+### Actualizar un usuario por ID (solo admin)
+PUT {{baseUrl}}/api/users/{{userId}}
+Content-Type: application/json
+Authorization: Bearer {{Token}}
+
+{
+    "name": "SantiagoMuriel29",
+    "email": "SantiagoMurielOrozco29@gmail.com",
+    "password": "SantiagoMuriel29"
+}
+
+### Eliminar un usuario por ID (solo admin)
+DELETE {{baseUrl}}/api/users/{{userId}}
+Authorization: Bearer {{Token}}
+
+### Actualizar perfil
+PUT {{baseUrl}}/api/users/{{userId}}/profile
+Content-Type: application/json
+Authorization: Bearer {{Token}}
+
+{
+    "name": "Santiago Muriel Orozco",
+    "email": "Santiago29@gmail.com"
+}
+
+### Solicitar token de reseteo de contraseña
+POST {{baseUrl}}/api/auth/request-reset-password
+Content-Type: application/json
+
+{
+    "email": "admin@example.com"
+}
+
+### Cambiar contraseña usando token
+PUT {{baseUrl}}/api/auth/reset-password
+Content-Type: application/json
+
+{
+    "token": "{{ResetToken}}",
+    "newPassword": "Semeolvido"
+}
+
+
+### Agregar producto a favoritos (requiere autenticación)
+POST {{baseUrl}}/api/products/favorites
+Content-Type: application/json
+Authorization: Bearer {{Token}}
+
+{
+    "name": "iPhone",
+    "price": 999.99,
+    "url": "https://example.com/iphone14.jpg", 
+    "image_url": "https://example.com/iphone14.jpg"
+
+}
+
+### Obtener productos favoritos del usuario (requiere autenticación)
+GET {{baseUrl}}/api/products/Getfavorites
+Authorization: Bearer {{Token}}
+
+### Eliminar producto de favoritos (requiere autenticación)
+DELETE {{baseUrl}}/api/products/favorites/{{productId}}
+Content-Type: application/json
+Authorization: Bearer {{Token}}
