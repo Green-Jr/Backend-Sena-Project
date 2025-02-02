@@ -10,7 +10,7 @@ import cors from 'cors';
 dotenv.config();
 
 const app = express();
-//const PORT = process.env.PORT || 2700;
+const PORT = process.env.PORT || 2700;
 
 // Middleware
 app.use(bodyParser.json());
@@ -29,7 +29,13 @@ app.use((req, res, next) => {
 console.log("Allowed Frontend Origin: ", process.env.FRONTEND);
 
 app.use(cors({
-    origin: "*",
+    origin: (origin, callback) => {
+        if (!origin || origin === process.env.FRONTEND) {
+          callback(null, true);
+        } else {
+          callback(new Error("Not allowed by CORS"));
+        }
+      },
     methods: 'GET,POST,PUT,DELETE',
     credentials: true,
 }));
@@ -46,9 +52,7 @@ app.use('/api', userRoutes);      // Todas las rutas de usuarios bajo el prefijo
 app.use('/api', productRoutes);   // Todas las rutas de productos bajo el prefijo /api
 
 // Start server
-// app.listen(PORT, () => {
-//     console.log(`Server running on port ${PORT}`);
-// });
-
-export default app;
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
 

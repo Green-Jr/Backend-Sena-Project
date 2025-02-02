@@ -7,6 +7,10 @@ const sequelize = new Sequelize(process.env.PG_URI, {
   dialect: 'postgres',
   logging: console.log,
   dialectOptions: {
+    ssl: {
+      require: true, // Render necesita SSL para la conexión
+      rejectUnauthorized: false,
+    },
     searchPath: ['EASY_MARKET']
   }
 });
