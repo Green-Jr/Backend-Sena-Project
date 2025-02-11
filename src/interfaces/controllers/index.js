@@ -1,17 +1,17 @@
-import buildCreateUserController from './UserControllers/createUserController';
-import buildGetAllUsersController from './UserControllers/getAllUsersController';
-import buildGetUserByIdController from './UserControllers/getUserByIdController';
-import buildUpdateUserController from './UserControllers/updateUserController';
-import buildDeleteUserController from './UserControllers/deleteUserController';
-import buildAuthenticateUserController from './UserControllers/authenticateUserController';
-import buildGeneratePasswordResetTokenController from './UserControllers/generatePasswordResetTokenController';
-import buildResetPasswordUsingTokenController from './UserControllers/resetPasswordUsingTokenController';
-import buildSearchUsersController from './UserControllers/searchUsersController';
-import buildGetFavoriteProductsController from './ProductsControllers/searchFavoritesProductsController';
-import buildAddProductToFavoritesController from './ProductsControllers/addProductToFavoritesController';
-import buildRemoveProductFromFavoritesController from './ProductsControllers/deleteFavoriteProductController';
+import buildCreateUserController from './UserControllers/createUserController.js';
+import buildGetAllUsersController from './UserControllers/getAllUsersController.js';
+import buildGetUserByIdController from './UserControllers/getUserByIdController.js';
+import buildUpdateUserController from './UserControllers/updateUserController.js';
+import buildDeleteUserController from './UserControllers/deleteUserController.js';
+import buildAuthenticateUserController from './UserControllers/authenticateUserController.js';
+import buildGeneratePasswordResetTokenController from './UserControllers/generatePasswordResetTokenController.js';
+import buildResetPasswordUsingTokenController from './UserControllers/resetPasswordUsingTokenController.js';
+import buildSearchUsersController from './UserControllers/searchUsersController.js';
+import buildGetFavoriteProductsController from './ProductsControllers/searchFavoritesProductsController.js';
+import buildAddProductToFavoritesController from './ProductsControllers/addProductToFavoritesController.js';
+import buildRemoveProductFromFavoritesController from './ProductsControllers/deleteFavoriteProductController.js';
 
-import useCases from '../../application/uses_cases';
+import useCases from '../../application/uses_cases/index.js';
 
 // Creación de los controladores con sus respectivos casos de uso
 const createUserController = buildCreateUserController({ createUser: useCases.createUser });

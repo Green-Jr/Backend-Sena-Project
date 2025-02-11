@@ -1,5 +1,5 @@
-const { Sequelize } = require('sequelize');
-const dotenv = require('dotenv');
+import { Sequelize } from 'sequelize';
+import dotenv from 'dotenv';
 
 dotenv.config();
 
@@ -28,4 +28,4 @@ sequelize.authenticate()
     console.error('No se pudo conectar a la base de datos:', err);
   });
 
-module.exports = sequelize;
+export default sequelize;

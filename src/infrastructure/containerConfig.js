@@ -1,7 +1,7 @@
 import { asClass, asValue } from 'awilix';
-import UserRepository from './repositories/userRepository';
-import ProductRepository from './repositories/productRepository';
-import ExternalAPIService from './services/externalAPI'; // Importa tu servicio externo
+import UserRepository from './repositories/userRepository.js';
+import ProductRepository from './repositories/productRepository.js';
+import ExternalAPIService from './services/externalAPI.js'; // Importa tu servicio externo
 
 const registerDependencies = (container) => {
     container.register({

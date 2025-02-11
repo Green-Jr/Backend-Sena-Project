@@ -1,4 +1,4 @@
-const Product = require('../../domain/models/product'); // Importa el modelo de Product (definido con Sequelize)
+import Product from '../../domain/models/product.js';
 
 class ProductRepository {
     constructor() {
@@ -76,4 +76,4 @@ class ProductRepository {
     }
 }
 
-module.exports = ProductRepository;
+export default ProductRepository;

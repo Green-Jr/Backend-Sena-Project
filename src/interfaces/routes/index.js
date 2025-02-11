@@ -1,5 +1,5 @@
-import userRoutes from './userRoutes';
-import productRoutes from './productRoutes';
+import userRoutes from './userRoutes.js';
+import productRoutes from './productRoutes.js';
 
 export default function(app) {
     app.use('/api', userRoutes);      // Todas las rutas de usuarios bajo el prefijo /api

@@ -1,8 +1,8 @@
 @baseUrl = http://localhost:2700
-@userId = 6729a385-25af-4d94-b3bf-ff4544393e5b
-@Token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmYzRkNWYyNC05Nzg3LTRmYzMtYTkyYS1jZTJlNmFjOTNjOGYiLCJlbWFpbCI6ImFkbWluQGV4YW1wbGUuY29tIiwibmFtZSI6IkFkbWluIiwiaWF0IjoxNzM3MjMzNTUwLCJleHAiOjE3MzcyMzcxNTB9.LNG7RWpnf2zsV0iiSQ8LLunkZwX3aft-XW7LdKAP-to
+@userId = 7d0a2367-2cb0-45c6-9711-c2026e32a243
+@Token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3ZDBhMjM2Ny0yY2IwLTQ1YzYtOTcxMS1jMjAyNmUzMmEyNDMiLCJlbWFpbCI6ImNhcmxpdG9zMjMzQHRoaXNpc3ZhbmsuY29tIiwibmFtZSI6IkFyYmV5IE9yb3pjbyIsImlhdCI6MTczOTI0NTU0MywiZXhwIjoxNzM5MjQ5MTQzfQ.3p_FZYX6zRD1Bv-1u8QJScoeCFHSYGzC5CCJDpgpnJA
 @ResetToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyNjE2NjQxZi02NDU5LTRhYTAtYTZlYS0yY2IwYWIxYmI5MjQiLCJpYXQiOjE3Mjg3MDYzMzcsImV4cCI6MTcyODcwNzIzN30.OhL74P5ux9SAyUfO6oxfZq-oOygltOEUIU61z6EKiwY
-@productId=ebf9dadc-dbb4-4294-b7ef-0f13507d2d68
+@productId=fed76de8-917d-42d3-98a9-45f956238337
 
 ### Crear un nuevo usuario Admin
 POST {{baseUrl}}/api/users
@@ -10,7 +10,7 @@ Content-Type: application/json
 
 {
     "name": "Admin",
-    "email": "admin@example.com",
+    "email": "admin2@example.com",
     "password": "Arbey2321",
     "role": "admin"
 }
@@ -21,7 +21,7 @@ Content-Type: application/json
 
 {
     "name": "Arbey Orozco",
-    "email": "carlitos23@thisisvank.com",
+    "email": "carlitos233@thisisvank.com",
     "password": "123456"
 }
 
@@ -30,8 +30,8 @@ POST {{baseUrl}}/api/auth/login
 Content-Type: application/json
 
 {
-    "email": "admin@example.com",
-    "password": "Semeolvido"
+    "email": "carlitos233@thisisvank.com",
+    "password": "123456"
 }
 
 ### Autenticar un usuario

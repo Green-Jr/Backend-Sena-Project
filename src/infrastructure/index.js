@@ -2,9 +2,9 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import morgan from 'morgan';
-import userRoutes from '../interfaces/routes/userRoutes';
-import productRoutes from '../interfaces/routes/productRoutes';
-import sequelize from '../infrastructure/Config/database';
+import userRoutes from '../interfaces/routes/userRoutes.js';
+import productRoutes from '../interfaces/routes/productRoutes.js';
+import sequelize from '../infrastructure/Config/database.js';
 import cors from 'cors';
 
 dotenv.config();

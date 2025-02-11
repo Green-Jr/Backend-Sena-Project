@@ -1,7 +1,7 @@
 import express from 'express';
-import controllers from '../controllers';
-import authMiddleware from '../../application/middleware/authMiddleware';
-import isAdminMiddleware from '../../application/middleware/isAdminMiddleware';
+import controllers from '../controllers/index.js';
+import authMiddleware from '../../application/middleware/authMiddleware.js';
+import isAdminMiddleware from '../../application/middleware/isAdminMiddleware.js';
 
 const router = express.Router();
 

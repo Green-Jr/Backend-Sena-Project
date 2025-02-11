@@ -1,5 +1,5 @@
-const User = require('../../domain/models/user'); // Importa el modelo de User (definido con Sequelize)
-const { Op } = require('sequelize'); // Importar operadores de Sequelize
+import User from '../../domain/models/user.js';
+import { Op } from 'sequelize'; // Importar operadores de Sequelize
 
 class UserRepository {
     constructor() {
@@ -95,4 +95,4 @@ class UserRepository {
     }
 }
 
-module.exports = UserRepository;
+export default UserRepository;
